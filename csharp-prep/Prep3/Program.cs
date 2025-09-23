@@ -9,9 +9,11 @@ class Program
         {
             Random numGenerator = new Random();
             int number = numGenerator.Next(0, 100);
+
             Console.Write("What is your guess for the magic number? ");
             int guess = int.Parse(Console.ReadLine());
             int numGuesses = 0;
+
             while (guess != number)
             {
                 if (guess < number)
