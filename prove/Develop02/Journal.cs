@@ -23,7 +23,7 @@ class Journal
 
     public void Save()
     {
-        Console.WriteLine("Where would you like to save the file? ");
+        Console.WriteLine("Where would you like to save the file? (journal.csv)");
         string fileName = Console.ReadLine();
 
         using (StreamWriter outputFile = new StreamWriter(fileName, append: true))
@@ -43,7 +43,7 @@ class Journal
         if (confirm == "Y")
         {
             _entries.Clear();
-            Console.WriteLine("Where would you like to load the file from? ");
+            Console.WriteLine("Where would you like to load the file from? (journal.csv)");
             string fileName = Console.ReadLine();
             string[] lines = File.ReadAllLines(fileName);
 
@@ -67,6 +67,7 @@ class Journal
         String prompt1 = Prompt();
         entry1._prompt = prompt1;
         Console.WriteLine(prompt1);
+        Console.Write("> ");
         entry1._userEntry = Console.ReadLine();
         Console.WriteLine("What would you like to name your entry? ");
         entry1._entryName = Console.ReadLine();

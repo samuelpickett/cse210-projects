@@ -8,9 +8,9 @@ class Entry
 
     public void Display()
     {
-        Console.WriteLine($"{_date}");
-        Console.WriteLine($"{_entryName}");
-        Console.WriteLine($"{_prompt}");
+        Console.WriteLine($"Date: {_date}");
+        Console.WriteLine($"Name: {_entryName}");
+        Console.WriteLine($"Prompt: {_prompt}");
         Console.WriteLine($"{_userEntry}");
     }
 }
