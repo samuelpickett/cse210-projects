@@ -8,25 +8,25 @@ class Program
         journal1._prompts = ["What did I do today?", "How was I able to help someone today?", "Who was the most interesting person I interacted with today?", "What was the best part of my day?", "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?"];
             
         string toDo = "";
-        while (toDo != "Quit")
+        while (toDo != "5")
         {
 
-            if (toDo == "Write")
+            if (toDo == "1")
             {
                 journal1.Write();
             }
 
-            if (toDo == "Display")
+            if (toDo == "2")
             {
                 journal1.Display();
             }
 
-            if (toDo == "Load")
+            if (toDo == "3")
             {
                 journal1.Load();
             }
 
-            if (toDo == "Save")
+            if (toDo == "4")
             {
                 journal1.Save();
             }
