@@ -32,7 +32,7 @@ class Program
             }
 
             Console.WriteLine("Welcome to the Journal Program!");
-            Console.WriteLine("Please select on of the following choices:");
+            Console.WriteLine("Please select one of the following choices (use numbers):");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
