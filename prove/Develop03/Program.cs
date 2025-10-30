@@ -31,7 +31,7 @@ class Program
             }
         Random random = new();
         int rand = random.Next(0, scriptures.Count);
-        Scripture scripture = scriptures[1];
+        Scripture scripture = scriptures[rand];
 
         String quit = "";
         while (quit != "quit")
@@ -40,7 +40,6 @@ class Program
             scripture.Display();
             Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");
-            Console.WriteLine(scripture.CheckForWords());
             quit = Console.ReadLine();
             if (!scripture.CheckForWords())
             {
