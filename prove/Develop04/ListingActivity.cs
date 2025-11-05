@@ -1,18 +1,28 @@
 class ListingActivity: Activity
 {
-    List<String> _prompts = new List<String> { "Who are people that you appreciate?", "What are personal strengths of yours?", "Who are people that you have helped this week?", "When have you felt the Holy Ghost this month?", "Who are some of your personal heroes?" };
-    List<String> _entries = new List<String> { };
+    private List<String> _prompts = new List<String> { "Who are people that you appreciate?", "What are personal strengths of yours?", "Who are people that you have helped this week?", "When have you felt the Holy Ghost this month?", "Who are some of your personal heroes?" };
+    private List<String> _entries = new List<String> { };
 
     public ListingActivity() :
-    base("Welcome to the Listing Activity.\n\nThis activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
+    base("Welcome to the Listing Activity.\n\nThis activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", "Listing Activity")
     {
 
     }
 
     private void DisplayPrompt()
     {
+        List<String> prompts = new List<String>();
         Random rand = new();
         int ranNumber = rand.Next(0, _prompts.Count);
+        if (prompts.Count == _prompts.Count)
+        {
+            prompts.Clear();
+        }
+        while (prompts.Contains(_prompts[ranNumber]))
+        {
+            ranNumber = rand.Next(0, _prompts.Count);
+        }
+        prompts.Add(_prompts[ranNumber]);
         Console.WriteLine("List as many response as you can to the following prompt:");
         Console.WriteLine($" --- {_prompts[ranNumber]} ---");
     }
@@ -48,6 +58,6 @@ class ListingActivity: Activity
         CountDown();
         AddEntries();
         Console.WriteLine($"You listed {_entries.Count} items!");
-        base.DisplayEnd("Listing Activity");
+        base.DisplayEnd();
     }
 }

@@ -3,16 +3,19 @@ class Activity
     private string _welcome;
 
     private int _timer;
+    private string _activityDone;
 
-    protected Activity(string welcome)
+    protected Activity(string welcome, string activity)
     {
         _welcome = welcome;
+        _activityDone = activity;
     }
 
     protected int GetTimer()
     {
         return _timer;
     }
+    
     protected void DisplayWelcome()
     {
         Console.Clear();
@@ -24,13 +27,13 @@ class Activity
         Spinner();
     }
 
-    protected void DisplayEnd(String activityDone)
+    protected void DisplayEnd()
     {
         Console.WriteLine();
         Console.WriteLine("Well Done!");
         Spinner();
         Console.WriteLine();
-        Console.WriteLine($"You have completed another {_timer} seconds of the {activityDone}.");
+        Console.WriteLine($"You have completed another {_timer} seconds of the {_activityDone}.");
         Spinner();
 
     }
@@ -42,16 +45,16 @@ class Activity
         while (DateTime.Now < end)
         {
             Console.Write("|");
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
             Console.Write("/");
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
             Console.Write("-");
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
             Console.Write("\\");
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
         }
     }
