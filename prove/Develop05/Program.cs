@@ -30,9 +30,13 @@ class Program
             }
             else if (choice == 3)
             {
-                Console.Write("What is the filename for the goal file? ");
-                string file = Console.ReadLine();
-                goals.SaveGoals(file);
+                Console.Write("Are you sure you want to save? This will overwrite the current file. Y/N: ");
+                string confirm = Console.ReadLine();
+                if (confirm == "Y"){
+                    Console.Write("What is the filename for the goal file? ");
+                    string file = Console.ReadLine();
+                    goals.SaveGoals(file);
+                }
             }
             else if (choice == 4)
             {

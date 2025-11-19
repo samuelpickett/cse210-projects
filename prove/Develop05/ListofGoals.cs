@@ -63,7 +63,7 @@ class ListofGoals
 
     public void SaveGoals(string fileName)
     {
-        using (StreamWriter outputFile = new StreamWriter(fileName, append: true))
+        using (StreamWriter outputFile = new StreamWriter(fileName, append: false))
         {
             outputFile.WriteLine(_totalPoints);
             foreach (Goal goal in _goals) {
