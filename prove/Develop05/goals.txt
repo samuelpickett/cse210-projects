@@ -1,8 +1,0 @@
-43
-Goal,Eat,Eat food,10,True
-Eternal Goal,Study Scritprues,Study my scriptures each day,3,False
-Checklist Goal,Go to the temple,Perform an Ordinance,30,1,3,300,False
-403
-Goal,Eat,Eat food,10,True
-Eternal Goal,Study Scritprues,Study my scriptures each day,3,False
-Checklist Goal,Go to the temple,Perform an Ordinance,30,3,3,300,True
