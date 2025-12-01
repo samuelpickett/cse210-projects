@@ -1,0 +1,1 @@
+This project will be a food tracker, keeping track of foods that I have eaten on any given day. 
