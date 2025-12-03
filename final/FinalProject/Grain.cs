@@ -10,11 +10,24 @@ class Grain : Food
         _vitaminB = b;
     }
 
+    // Getters
     public override string getFood()
     {
         return base.getFood() + $", Vitamin B: {_vitaminB}, Fiber: {_fiber}";
     }
 
+
+    public int GetFiber()
+    {
+        return _fiber;
+    }
+
+    public int GetVitB()
+    {
+        return _vitaminB;
+    }
+
+    // String Rep for the Load function in FoodJournal
     public override string StringRep()
     {
         return base.StringRep() + $",{_vitaminB},{_fiber}";

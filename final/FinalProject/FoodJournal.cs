@@ -3,6 +3,7 @@ public class FoodJournal
     private List<Food> _foods = new List<Food> { };
 
 
+    // Allows someone to add a food to the list
     public void AddFood()
     {
         Console.WriteLine("What type of food would you like to add? \n1. Fruit\n2. Vegetable\n3. Grain\n4. Dairy\n5. Protein");
@@ -145,6 +146,7 @@ public class FoodJournal
         }
     }
     
+    // Saves the food list to a file
     public void SaveFoods(string fileName)
     {
         using (StreamWriter outputFile = new StreamWriter(fileName, append: true))
@@ -156,6 +158,7 @@ public class FoodJournal
             }
         }
     
+    // Loads foods from a file
     public void LoadFoods(string fileName)
     {
         string[] lines = File.ReadAllLines(fileName);
@@ -191,6 +194,7 @@ public class FoodJournal
         }
     }
 
+    // Shows the names of the foods in the list
     public void ShowFoods()
     {
         foreach (Food food in _foods)
@@ -199,6 +203,7 @@ public class FoodJournal
         }
     }
     
+    // Shows the nutrition information for the foods in the list
     public void ShowDetailedFoods()
     {
         foreach (Food food in _foods)

@@ -9,11 +9,18 @@ class Dairy : Food
         _calcium = calcium;
     }
 
+    // Getters
     public override string getFood()
     {
         return base.getFood() + $", Calcium: {_calcium}";
     }
 
+    public int GetCalcium()
+    {
+        return _calcium;
+    }
+
+    // String Rep for the Load function in FoodJournal
     public override string StringRep()
     {
         return base.StringRep() + $",{_calcium}";

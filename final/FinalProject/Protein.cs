@@ -12,11 +12,28 @@ class Protein : Food
         _vitaminB = b;
     }
 
+    // Getters
     public override string getFood()
     {
         return base.getFood() + $", Vitamin A: {_vitaminB}, Vitamin C: {_iron}, Fiber: {_zinc}";
     }
 
+    public int GetIron()
+    {
+        return _iron;
+    }
+
+    public int GetZinc()
+    {
+        return _zinc;
+    }
+
+    public int GetVitB()
+    {
+        return _vitaminB;
+    }
+
+    // String Rep for the Load function in FoodJournal
     public override string StringRep()
     {
         return base.StringRep() + $",{_iron},{_zinc},{_vitaminB}";

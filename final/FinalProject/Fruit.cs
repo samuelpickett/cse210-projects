@@ -11,15 +11,31 @@ class Fruit : Food
         _fiber = fiber;
     }
 
-
+    // Getters
     public override string getFood()
     {
         return base.getFood() + $", Vitamin A: {_vitaminA}, Vitamin C: {_vitaminC}, Fiber: {_fiber}";
     }
 
+
+    public int GetVitA()
+    {
+        return _vitaminA;
+    }
+
+    public int GetVitaC()
+    {
+        return _vitaminC;
+    }
+
+    public int GetFiber()
+    {
+        return _fiber;
+    }
+
+    // String Rep for the Load function in FoodJournal
     public override string StringRep()
     {
         return base.StringRep() + $",{_vitaminA},{_vitaminC},{_fiber}";
     }
-
 }

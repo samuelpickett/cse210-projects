@@ -11,10 +11,28 @@ class Vegetable : Food
         _potassium = pot;
     }
 
+    // Getters
     public override string getFood()
     {
         return base.getFood() + $", Potassium: {_potassium}, Vitamin C: {_vitaminC}, Fiber: {_fiber}";
     }
+
+    public int GetVitC()
+    {
+        return _vitaminC;
+    }
+
+    public int GetPotassium()
+    {
+        return _potassium;
+    }
+
+    public int GetFiber()
+    {
+        return _fiber;
+    }
+
+    // String Rep for the Load function in FoodJournal
     public override string StringRep()
     {
         return base.StringRep() + $",{_vitaminC},{_potassium},{_fiber}";
