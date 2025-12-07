@@ -146,10 +146,16 @@ public class FoodJournal
         }
     }
     
+    
+    // Allows someone to add a food that is saved elsewhere
+    public void AddSavedFood(Food food)
+    {
+        _foods.Add(food);
+    }
     // Saves the food list to a file
     public void SaveFoods(string fileName)
     {
-        using (StreamWriter outputFile = new StreamWriter(fileName, append: true))
+        using (StreamWriter outputFile = new StreamWriter(fileName, append: false))
         {
                 foreach (Food food in _foods)
                 {
@@ -197,20 +203,28 @@ public class FoodJournal
     // Shows the names of the foods in the list
     public void ShowFoods()
     {
+        int i = 1;
         foreach (Food food in _foods)
         {
+            Console.Write($"{i}. ");
             Console.WriteLine(food.getName());
+            i++;
         }
     }
     
     // Shows the nutrition information for the foods in the list
     public void ShowDetailedFoods()
     {
+        int i = 1;
         foreach (Food food in _foods)
         {
+            Console.Write($"{i}. ");
             Console.WriteLine(food.getFood());
         }
     }
 
-
+    public Food GetFood(int listItem)
+    {
+        return _foods[listItem - 1];
+    }
 }

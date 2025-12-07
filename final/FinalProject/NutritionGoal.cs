@@ -1,5 +1,6 @@
 using System.Formats.Tar;
 using System.Security.Cryptography;
+using System.Xml.Linq;
 
 class NutritionGoal
 {
@@ -71,7 +72,7 @@ class NutritionGoal
             Console.WriteLine($"Your Goal:\nCalories: {_caloriesEaten}/{_calories} eaten\nProtein: {_proteinEaten}/{_protein} grams eaten\nFat: {_fatsEaten}/{_fats} grams eaten\nCarbs: {_carbsEaten}/{_carbs} grams eaten\nVitamin A: {_vitAEaten}/{_vitA} micrograms eaten\nVitamin B: {_vitBEaten}/{_vitB} micrograms eaten\nVitamin C: {_vitCEaten}/{_vitC} milligrams eaten\nFiber: {_fiberEaten}/{_fiber} grams eaten\nPotassium: {_potaEaten}/{_pota} grams eaten\nZinc: {_zincEaten}/{_zinc} milligrams eaten\nIron: {_ironEaten}/{_iron} milligrams eaten\nCalcium: {_calciumEaten}/{_calcium} milligrams eaten");
         }
     }
-// Updates the _eaten variables
+    // Updates the _eaten variables
     public void AddToEaten(Food food)
     {
         _caloriesEaten += food.getCal();
@@ -109,5 +110,101 @@ class NutritionGoal
             }
         }
     }
+    // Creates a goal based on the user's input
+    public void CreateGoal()
+    {
+        Console.Write("Which goal would you like to make?\n1. Simple\n2. Complex\n> ");
+        int goalChoice = int.Parse(Console.ReadLine());
+        if (goalChoice == 1)
+        {
+            Console.WriteLine("How many calories would you like to eat each day? ");
+            _calories = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("How many grams of protein would you like to eat each day? ");
+            _protein = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many grams of carbs would you like to eat each day? ");
+            _carbs = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many grams of fat would you like to eat each day? ");
+            _fats = int.Parse(Console.ReadLine());
+        }
+        else if (goalChoice == 2)
+        {
+            Console.WriteLine("How many calories would you like to eat each day? ");
+            _calories = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many grams of protein would you like to eat each day? ");
+            _protein = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many grams of carbs would you like to eat each day? ");
+            _carbs = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many grams of fat would you like to eat each day? ");
+            _fats = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many micrograms of Vitamin A would you like to eat each day? ");
+            _vitA = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many micrograms of Vitamin B would you like to eat each day? ");
+            _vitB = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many milligrams of Vitamin C would you like to eat each day? ");
+            _vitC = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many grams of fiber would you like to eat each day? ");
+            _fiber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many grams of potassium would you like to eat each day? ");
+            _pota = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many milligrams of zinc would you like to eat each day? ");
+            _zinc = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many milligrams of iron would you like to eat each day? ");
+            _iron = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("How many milligrams of calcium would you like to eat each day? ");
+            _calcium = int.Parse(Console.ReadLine());
+        }
+    }
+
+    // Saves the goal to a file
+    public void SaveGoal(String fileName)
+    {
+        using (StreamWriter outputFile = new StreamWriter(fileName, append: false))
+        {
+            outputFile.WriteLine(_calories);
+            outputFile.WriteLine(_carbs);
+            outputFile.WriteLine(_fats);
+            outputFile.WriteLine(_protein);
+            outputFile.WriteLine(_vitA);
+            outputFile.WriteLine(_vitB);
+            outputFile.WriteLine(_vitC);
+            outputFile.WriteLine(_pota);
+            outputFile.WriteLine(_fiber);
+            outputFile.WriteLine(_zinc);
+            outputFile.WriteLine(_iron);
+            outputFile.WriteLine(_calcium); 
+        }
+    }
+
+
+    // Loads goal from a file
+    public void LoadGoal(String fileName)
+    {
+        string[] goals = File.ReadAllLines(fileName);
+        _calories = int.Parse(goals[0]);
+        _carbs = int.Parse(goals[1]);
+        _fats = int.Parse(goals[2]);
+        _protein = int.Parse(goals[3]);
+        _vitA = int.Parse(goals[4]);
+        _vitB = int.Parse(goals[5]);
+        _vitC = int.Parse(goals[6]);
+        _pota = int.Parse(goals[7]);
+        _fiber = int.Parse(goals[8]);
+        _zinc = int.Parse(goals[9]);
+        _iron = int.Parse(goals[10]);
+        _calcium = int.Parse(goals[11]);
+    }
 }
