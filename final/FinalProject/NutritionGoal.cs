@@ -72,13 +72,14 @@ class NutritionGoal
             Console.WriteLine($"Your Goal:\nCalories: {_caloriesEaten}/{_calories} eaten\nProtein: {_proteinEaten}/{_protein} grams eaten\nFat: {_fatsEaten}/{_fats} grams eaten\nCarbs: {_carbsEaten}/{_carbs} grams eaten\nVitamin A: {_vitAEaten}/{_vitA} micrograms eaten\nVitamin B: {_vitBEaten}/{_vitB} micrograms eaten\nVitamin C: {_vitCEaten}/{_vitC} milligrams eaten\nFiber: {_fiberEaten}/{_fiber} grams eaten\nPotassium: {_potaEaten}/{_pota} grams eaten\nZinc: {_zincEaten}/{_zinc} milligrams eaten\nIron: {_ironEaten}/{_iron} milligrams eaten\nCalcium: {_calciumEaten}/{_calcium} milligrams eaten");
         }
     }
+    
     // Updates the _eaten variables
     public void AddToEaten(Food food)
     {
-        _caloriesEaten += food.getCal();
-        _carbsEaten += food.getCarbs();
-        _proteinEaten += food.getPro();
-        _fatsEaten += food.getFat();
+        _caloriesEaten += food.GetCal();
+        _carbsEaten += food.GetCarbs();
+        _proteinEaten += food.GetPro();
+        _fatsEaten += food.GetFat();
         if (_vitA != 0)
         {
             if (food is Fruit fruit)
@@ -110,6 +111,7 @@ class NutritionGoal
             }
         }
     }
+    
     // Creates a goal based on the user's input
     public void CreateGoal()
     {
@@ -188,7 +190,6 @@ class NutritionGoal
             outputFile.WriteLine(_calcium); 
         }
     }
-
 
     // Loads goal from a file
     public void LoadGoal(String fileName)

@@ -10,9 +10,9 @@ class Dairy : Food
     }
 
     // Getters
-    public override string getFood()
+    public override string GetFood()
     {
-        return base.getFood() + $", Calcium: {_calcium}";
+        return base.GetFood() + $", Calcium: {_calcium}";
     }
 
     public int GetCalcium()

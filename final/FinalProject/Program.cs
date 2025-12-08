@@ -20,7 +20,7 @@
         FoodJournal _totalFoods = new();
         _totalFoods.LoadFoods("foods.csv");
         int choice = 0;
-        Console.WriteLine("Welcome to the Food Journal.");
+        Console.WriteLine("\nWelcome to the Food Journal.");
     
         do
         {
@@ -35,6 +35,7 @@
             {
                 Console.WriteLine("Please choose from this list of foods");
                 _totalFoods.ShowFoods();
+                Console.Write("> ");
                 int foodChoice = int.Parse(Console.ReadLine());
                 Food food = _totalFoods.GetFood(foodChoice);
                 _todaysFoods.AddSavedFood(food);

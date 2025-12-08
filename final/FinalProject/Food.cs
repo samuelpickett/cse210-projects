@@ -22,30 +22,30 @@ abstract public class Food
 
 
     // Displays the nutrition info for the food
-    public virtual String getFood()
+    public virtual String GetFood()
     {
         return $"{_name}: Type: {_typeOfFood}, Calories: {_calories}, Carbs: {_gramsCarbs}, Fat: {_gramsFat}, Protein: {_gramsProtein}";
     }
 
     // Getters for the class 
-    public String getName()
+    public String GetName()
     {
         return _name;
     }
 
-    public int getCal()
+    public int GetCal()
     {
         return _calories;
     }
-    public int getPro()
+    public int GetPro()
     {
         return _gramsProtein;
     }
-    public int getFat()
+    public int GetFat()
     {
         return _gramsFat;
     }
-    public int getCarbs()
+    public int GetCarbs()
     {
         return _gramsCarbs;
     }

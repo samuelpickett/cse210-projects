@@ -6,7 +6,7 @@ public class FoodJournal
     // Allows someone to add a food to the list
     public void AddFood()
     {
-        Console.WriteLine("What type of food would you like to add? \n1. Fruit\n2. Vegetable\n3. Grain\n4. Dairy\n5. Protein");
+        Console.WriteLine("What type of food would you like to add? \n1. Fruit\n2. Vegetable\n3. Grain\n4. Dairy\n5. Protein\n> ");
         String choice = Console.ReadLine();
         if (choice == "1")
         {
@@ -207,7 +207,7 @@ public class FoodJournal
         foreach (Food food in _foods)
         {
             Console.Write($"{i}. ");
-            Console.WriteLine(food.getName());
+            Console.WriteLine(food.GetName());
             i++;
         }
     }
@@ -219,7 +219,7 @@ public class FoodJournal
         foreach (Food food in _foods)
         {
             Console.Write($"{i}. ");
-            Console.WriteLine(food.getFood());
+            Console.WriteLine(food.GetFood());
         }
     }
 
