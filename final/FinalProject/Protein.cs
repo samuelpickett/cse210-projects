@@ -13,9 +13,9 @@ class Protein : Food
     }
 
     // Getters
-    public override string getFood()
+    public override string GetFood()
     {
-        return base.getFood() + $", Vitamin A: {_vitaminB}, Vitamin C: {_iron}, Fiber: {_zinc}";
+        return base.GetFood() + $", Vitamin A: {_vitaminB}, Vitamin C: {_iron}, Fiber: {_zinc}";
     }
 
     public int GetIron()

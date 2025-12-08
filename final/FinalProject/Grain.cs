@@ -11,9 +11,9 @@ class Grain : Food
     }
 
     // Getters
-    public override string getFood()
+    public override string GetFood()
     {
-        return base.getFood() + $", Vitamin B: {_vitaminB}, Fiber: {_fiber}";
+        return base.GetFood() + $", Vitamin B: {_vitaminB}, Fiber: {_fiber}";
     }
 
 
